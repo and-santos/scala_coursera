@@ -1,5 +1,9 @@
 # Scala Functional Programming (Coursera Notes)
 
-## Lista de conteúdo
+- [Cursos](docs/cursos.md)
+
+## Lista de conteúdo:
+
+### Functional Programming in Scala:
 
 - [Cheat Sheet](docs/cheat_sheet.md)
