@@ -120,4 +120,54 @@ The associatibity of an operator is determined by its last character: Right-asso
 
 Note that assignment operators have lowest precedence.
 
-## Parei em Class hierarchies
+## Class hierarchies
+
+```scala
+abstract class TopLevel:  // abstract class
+    def method1(x: Int): Int  // abstract method
+    def method2(x: Int): Int = ...
+end TopLevel
+
+class Level1 extends TopLevel:
+    def method(x: Int): Int
+    override def method2(x: Int): Int = ...  // TopLevel's method2 needs to be explicitly overridden
+end Level1
+
+object MyObject extends TopLevel:
+    ...  // defines a singleton object. No other instance can be created
+```
+
+To create an runnable applicantion in Scala:
+
+```scala
+@main def run(args: Array[String]) =
+    println("Hello world")
+```
+
+or
+
+```scala
+object Hello extends App:
+println("Hello World")
+```
+
+## Class ORganization
+
+- Classes and objects are organized in packages(`package myPackage`).
+
+- They can be referenced through import statements (`import myPackage.MyClass`, `import myPackage.*`, `import myPackage.{MyClass1, MyClass2}`, `import myPackage.{MyClass1 as A}`)
+
+- They can also be directly referenced in the code with the fully qualified name (`new myPackage.MyClass1`)
+
+- All members of packages `scala` and `java.lang` as well as all members of the object `scala.Predef` are automatically imported.
+
+- Traits are similar to Java interfaces, except they can have non-abstract members:
+
+```scala
+trait Planar:
+...
+
+class Square extends Shape with Planar
+```
+
+## Parei em Type Parameters
